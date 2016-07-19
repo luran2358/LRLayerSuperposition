@@ -80,16 +80,14 @@ static NSString * const LRCellId = @"LREffectCellId";
 
 
 
-- (CGFloat)cellOffsetOnTabelView:(UITableView *)tabelView
+- (void)cellOffsetOnTabelView:(UITableView *)tabelView
 {
     
     CGFloat currentLocation = tabelView.contentOffset.y + LRLastCellHeight;
     
 #if 0
     //下拉禁止 第一个cell往下移动
-    if (currentLocation < LRCellHeight) {
-        return 0;
-    }
+    if (currentLocation < LRCellHeight) return;
 #endif
     
     //如果超出规定的位置以 ->“上”
@@ -115,10 +113,11 @@ static NSString * const LRCellId = @"LREffectCellId";
         self.backGView.y = - moveY;
         
     }else{//超出规定的位置以 ->“下”
+        
         self.backGView.height = LRCellHeight;
+        
         self.backGView.y = 0;
     }
-    return 0;
 }
 
 @end

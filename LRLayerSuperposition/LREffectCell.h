@@ -18,7 +18,7 @@
 /**
  *  cell偏移设置
  */
-- (CGFloat)cellOffsetOnTabelView:(UITableView *)tabelView;
+- (void)cellOffsetOnTabelView:(UITableView *)tabelView;
 
 /**
  *  创建cell
